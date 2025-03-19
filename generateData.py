@@ -4,7 +4,8 @@ f = open("data.csv", "w")
 
 print("Generating data...")
 
-for x in range(1, 99999):
+for x in range(10**5):
+    print(f"Generating data for {x}...")
     f.write(f"{x},{compute1s.main(x)}\n")
 
 f.close()
