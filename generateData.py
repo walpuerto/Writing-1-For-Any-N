@@ -2,11 +2,13 @@ import compute1s
 
 f = open("data.csv", "w")
 
-print("Generating data...")
+data = [0, 1]
 
-for x in range(10**5):
-    print(f"Generating data for {x}...")
-    f.write(f"{x},{compute1s.main(x)}\n")
+for x in range(2, 10**7 + 1):
+    data.append(data[x-1] + compute1s.get1sDecimal(x))
+
+for x in range(len(data)):
+    f.write(f"{x},{data[x]}\n")
 
 f.close()
 
